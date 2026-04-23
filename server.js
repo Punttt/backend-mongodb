@@ -49,7 +49,14 @@ const WorkExperienceSchema = new mongoose.Schema({
 const WorkExperience = mongoose.model("WorkExperience", WorkExperienceSchema);
 
 // Routes
-
+app.get("/api/workexperience", async (req, res) => {
+    try {
+        const result = await WorkExperience.find({});
+        res.json(result);
+    } catch (error) {
+        res.status(500).json({error: "Kunde inte hämta data" });
+    }
+})
 
 // Startar servern och lyssnar efter porten
 app.listen(port, ()=> {
