@@ -14,8 +14,15 @@ app.use(express.json());
 // Ansluter till mongoDB via URL i .env
 mongoose.connect(process.env.MONGO_URL)
     .then(() => console.log("Connected to MongoDB"))
-    .catch((error) => console.log("Error connecting to database: " + error))
+    .catch((error) => console.log("Error connecting to database: " + error));
 
+// Scheman
+
+
+// Modell utifrån scheman
+
+
+// Routes
 
 
 // Startar servern och lyssnar efter porten
