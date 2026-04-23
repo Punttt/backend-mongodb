@@ -65,7 +65,16 @@ app.post("/api/workexperience", async (req, res) => {
     } catch (error) {
         res.status(400).json({ error: "Alla fält måste fyllas in" });
     }
-})
+});
+
+app.delete("/api/workexperience/:id", async (req, res) => {
+    try{
+        const result = await WorkExperience.findByIdAndDelete(req.params.id);
+        res.json({ message: "Work experience deleted" });
+    } catch (error) {
+        res.status(500).json({ error: "Kunde inte radera posten" });
+    }
+});
 
 // Startar servern och lyssnar efter porten
 app.listen(port, ()=> {
