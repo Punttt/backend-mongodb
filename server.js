@@ -10,3 +10,8 @@ const port = process.env.PORT || 3000;
 // Tillåter JSON och cross origin CORS
 app.use(cors());
 app.use(express.json());
+
+// Ansluter till mongoDB via URL i .env
+mongoose.connect(process.env.MONGO_URL)
+    .then(() => console.log("Connected to MongoDB"))
+    .catch((error) => console.log("Error connecting to database: " + error))
