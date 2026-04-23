@@ -46,7 +46,7 @@ const WorkExperienceSchema = new mongoose.Schema({
 });
 
 // Modell utifrån scheman
-
+const WorkExperience = mongoose.model("WorkExperience", WorkExperienceSchema);
 
 // Routes
 
