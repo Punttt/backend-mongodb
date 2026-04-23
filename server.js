@@ -16,8 +16,34 @@ mongoose.connect(process.env.MONGO_URL)
     .then(() => console.log("Connected to MongoDB"))
     .catch((error) => console.log("Error connecting to database: " + error));
 
-// Scheman
 
+// Schema - workexperience
+const WorkExperienceSchema = new mongoose.Schema({
+    companyname: {
+        type: String,
+        required: true
+    },
+    jobtitle: {
+        type: String,
+        required: true
+    },
+    location: {
+        type: String,
+        required: true
+    },
+    startdate: {
+        type: String,
+        required: true
+    },
+    enddate: {
+        type: String,
+        required: false
+    },
+    description: {
+        type: String,
+        required: true
+    },
+});
 
 // Modell utifrån scheman
 
