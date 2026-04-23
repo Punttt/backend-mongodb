@@ -58,7 +58,14 @@ app.get("/api/workexperience", async (req, res) => {
     }
 });
 
-
+app.post("/api/workexperience", async (req, res) => {
+    try {
+        const result = await WorkExperience.create(req.body);
+        res.json({ message: "Work experience added", id: result._id});
+    } catch (error) {
+        res.status(400).json({ error: "Alla fält måste fyllas in" });
+    }
+})
 
 // Startar servern och lyssnar efter porten
 app.listen(port, ()=> {
