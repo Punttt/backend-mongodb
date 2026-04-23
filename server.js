@@ -21,27 +21,27 @@ mongoose.connect(process.env.MONGO_URL)
 const WorkExperienceSchema = new mongoose.Schema({
     companyname: {
         type: String,
-        required: true
+        required: [true, "You must fill in companyname"]
     },
     jobtitle: {
         type: String,
-        required: true
+        required: [true, "You must fill in jobtitle"]
     },
     location: {
         type: String,
-        required: true
+        required: [true, "You must fill in location"]
     },
     startdate: {
-        type: String,
-        required: true
+        type: Date,
+        required: [true, "You must fill in startdate"]
     },
     enddate: {
-        type: String,
+        type: Date,
         required: false
     },
     description: {
         type: String,
-        required: true
+        required: [true, "You must fill in description"]
     },
 });
 
