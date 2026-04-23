@@ -56,7 +56,9 @@ app.get("/api/workexperience", async (req, res) => {
     } catch (error) {
         res.status(500).json({error: "Kunde inte hämta data" });
     }
-})
+});
+
+
 
 // Startar servern och lyssnar efter porten
 app.listen(port, ()=> {
