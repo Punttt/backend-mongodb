@@ -63,7 +63,20 @@ app.post("/api/workexperience", async (req, res) => {
         const result = await WorkExperience.create(req.body);
         res.json({ message: "Work experience added", id: result._id});
     } catch (error) {
-        res.status(400).json({ error: "Alla fält måste fyllas in" });
+        res.status(400).json({ error: error.message });
+    }
+});
+
+app.put("/api/workexperience/:id", async (req, res) => {
+    try {
+        const result = await WorkExperience.findByIdAndUpdate(
+            req.params.id,
+            req.body,
+            { new: true, runValidators: true }
+        );
+        res.json({ message: "Work experience is updated", data: result });
+    } catch (error){
+        res.status(400).json({ error: error.message });
     }
 });
 
