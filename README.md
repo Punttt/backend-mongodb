@@ -28,8 +28,8 @@ workexperiences (
 ## Installation
 1. Klona projekt
 ```
-git clone https://github.com/DITT_REPO/backend-lab-mongodb.git
-cd backend-lab-mongodb
+git clone https://github.com/Punttt/backend-mongodb.git
+cd backend-mongodb
 ```
 
 2. Installera dependencies
